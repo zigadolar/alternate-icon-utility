@@ -16,15 +16,15 @@ Pod::Spec.new do |s|
   s.author           = { 'Dolar, Ziga' => 'dolar.ziga@gmail.com' }
   s.source           = { :git => 'https://github.com/zigadolar/alternate-icon-utility.git', :tag => s.version.to_s }
 
-  s.ios.deployment_target = '8.0'
+  s.platform     = :ios, '10.3'
+  s.ios.deployment_target = '10.3'
+  s.swift_version = '5.0'
 
-  s.source_files = 'AlternateIcons/Classes/**/*'
-  
-  # s.resource_bundles = {
-  #   'AlternateIcons' => ['AlternateIcons/Assets/*.png']
-  # }
+  s.ios.source_files = 'AlternateIcons/Classes/**/*'
+  s.ios.resource_bundles = {
+    'AlternateIcons' => ['AlternateIcons/Assets/*.xcassets',
+    'AlternateIcons/Assets/*.storyboard']
+  }
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.ios.frameworks = 'UIKit'
 end

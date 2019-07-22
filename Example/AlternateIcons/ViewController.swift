@@ -8,17 +8,39 @@
 
 import UIKit
 
+import AlternateIcons
+
 class ViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+    @IBOutlet var currentIcon: UIImageView!
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        currentIcon.image = IconsUtility().currentIcon.iconImage
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func showIconPicker(_ sender: UIButton) {
+        guard let iconController = IconTableViewController.load() else {
+            return
+        }
+
+        iconController.delegate = self
+        iconController.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .stop, target: self, action: #selector(dismissController))
+
+        let navigationController = UINavigationController(rootViewController: iconController)
+
+        show(navigationController, sender: self)
     }
 
+    @objc func dismissController() {
+        dismiss(animated: true)
+    }
+}
+
+extension ViewController: IconViewControllerDelegate {
+    func iconViewController(_ viewController: UIViewController, didTapPremium icon: Icon) {
+        debugPrint(icon.description)
+    }
 }
 

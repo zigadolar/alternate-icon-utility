@@ -13,6 +13,12 @@
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		FB4F15E9762A5E9A42CA129E /* Pods_AlternateIcons_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F480FC65043D1150572AF65 /* Pods_AlternateIcons_Example.framework */; };
+		FF67F3D422E60772004492F5 /* 1_icon_60pt@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = FF67F3CE22E60772004492F5 /* 1_icon_60pt@3x.png */; };
+		FF67F3D522E60772004492F5 /* 1_icon_60pt@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FF67F3CF22E60772004492F5 /* 1_icon_60pt@2x.png */; };
+		FF67F3D622E60772004492F5 /* 3_icon_60pt@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = FF67F3D022E60772004492F5 /* 3_icon_60pt@3x.png */; };
+		FF67F3D722E60772004492F5 /* 3_icon_60pt@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FF67F3D122E60772004492F5 /* 3_icon_60pt@2x.png */; };
+		FF67F3D822E60772004492F5 /* 2_icon_60pt@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = FF67F3D222E60772004492F5 /* 2_icon_60pt@3x.png */; };
+		FF67F3D922E60772004492F5 /* 2_icon_60pt@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FF67F3D322E60772004492F5 /* 2_icon_60pt@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +35,12 @@
 		6DFC03E152ADED4650D1678F /* Pods-AlternateIcons_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlternateIcons_Example.debug.xcconfig"; path = "Target Support Files/Pods-AlternateIcons_Example/Pods-AlternateIcons_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		BC344B73B440FF631D72DB6D /* AlternateIcons.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = AlternateIcons.podspec; path = ../AlternateIcons.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		D4E6FF638661D617B25078D3 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		FF67F3CE22E60772004492F5 /* 1_icon_60pt@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1_icon_60pt@3x.png"; sourceTree = "<group>"; };
+		FF67F3CF22E60772004492F5 /* 1_icon_60pt@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1_icon_60pt@2x.png"; sourceTree = "<group>"; };
+		FF67F3D022E60772004492F5 /* 3_icon_60pt@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "3_icon_60pt@3x.png"; sourceTree = "<group>"; };
+		FF67F3D122E60772004492F5 /* 3_icon_60pt@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "3_icon_60pt@2x.png"; sourceTree = "<group>"; };
+		FF67F3D222E60772004492F5 /* 2_icon_60pt@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "2_icon_60pt@3x.png"; sourceTree = "<group>"; };
+		FF67F3D322E60772004492F5 /* 2_icon_60pt@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "2_icon_60pt@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +94,7 @@
 		607FACD21AFB9204008FA782 /* Example for AlternateIcons */ = {
 			isa = PBXGroup;
 			children = (
+				FF67F3CD22E60772004492F5 /* Icons */,
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
@@ -109,6 +122,19 @@
 				6CE1C6AEB2758257636489E8 /* LICENSE */,
 			);
 			name = "Podspec Metadata";
+			sourceTree = "<group>";
+		};
+		FF67F3CD22E60772004492F5 /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				FF67F3CE22E60772004492F5 /* 1_icon_60pt@3x.png */,
+				FF67F3CF22E60772004492F5 /* 1_icon_60pt@2x.png */,
+				FF67F3D022E60772004492F5 /* 3_icon_60pt@3x.png */,
+				FF67F3D122E60772004492F5 /* 3_icon_60pt@2x.png */,
+				FF67F3D222E60772004492F5 /* 2_icon_60pt@3x.png */,
+				FF67F3D322E60772004492F5 /* 2_icon_60pt@2x.png */,
+			);
+			path = Icons;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -173,9 +199,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF67F3D622E60772004492F5 /* 3_icon_60pt@3x.png in Resources */,
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
+				FF67F3D922E60772004492F5 /* 2_icon_60pt@2x.png in Resources */,
+				FF67F3D822E60772004492F5 /* 2_icon_60pt@3x.png in Resources */,
+				FF67F3D522E60772004492F5 /* 1_icon_60pt@2x.png in Resources */,
+				FF67F3D422E60772004492F5 /* 1_icon_60pt@3x.png in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
+				FF67F3D722E60772004492F5 /* 3_icon_60pt@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

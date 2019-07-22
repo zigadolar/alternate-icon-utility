@@ -35,5 +35,40 @@
 		<string>UIInterfaceOrientationPortrait</string>
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 	</array>
+    <key>CFBundleIcons</key>
+    <dict>
+        <key>CFBundleAlternateIcons</key>
+        <dict>
+            <key>Icon 1 - Default Category</key>
+            <dict>
+                <key>CFBundleIconFiles</key>
+                <array>
+                    <string>1_icon_60pt</string>
+                </array>
+            </dict>
+            <key>Icon 2</key>
+            <dict>
+                <key>AIUIconCategory</key>
+                <string>Category</string>
+                <key>AIUIsIconPremium</key>
+                <false/>
+                <key>CFBundleIconFiles</key>
+                <array>
+                    <string>2_icon_60pt</string>
+                </array>
+            </dict>
+            <key>Icon 3 - Premium</key>
+            <dict>
+                <key>AIUIconCategory</key>
+                <string>Premium</string>
+                <key>AIUIsIconPremium</key>
+                <true/>
+                <key>CFBundleIconFiles</key>
+                <array>
+                    <string>3_icon_60pt</string>
+                </array>
+            </dict>
+        </dict>
+    </dict>
 </dict>
 </plist>

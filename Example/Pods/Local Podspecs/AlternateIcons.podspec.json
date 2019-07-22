@@ -16,7 +16,18 @@
     "tag": "0.1.0"
   },
   "platforms": {
-    "ios": "8.0"
+    "ios": "10.3"
   },
-  "source_files": "AlternateIcons/Classes/**/*"
+  "swift_versions": "5.0",
+  "ios": {
+    "source_files": "AlternateIcons/Classes/**/*",
+    "resource_bundles": {
+      "AlternateIcons": [
+        "AlternateIcons/Assets/*.xcassets",
+        "AlternateIcons/Assets/*.storyboard"
+      ]
+    },
+    "frameworks": "UIKit"
+  },
+  "swift_version": "5.0"
 }
