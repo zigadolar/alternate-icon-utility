@@ -1,0 +1,22 @@
+{
+  "name": "AlternateIcons",
+  "version": "0.1.0",
+  "summary": "A short description of AlternateIcons.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/zigadolar/alternate-icon-utility.git",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Dolar, Ziga": "dolar.ziga@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/zigadolar/alternate-icon-utility.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "AlternateIcons/Classes/**/*"
+}

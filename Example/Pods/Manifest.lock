@@ -1,0 +1,16 @@
+PODS:
+  - AlternateIcons (0.1.0)
+
+DEPENDENCIES:
+  - AlternateIcons (from `../`)
+
+EXTERNAL SOURCES:
+  AlternateIcons:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  AlternateIcons: 7e58e040b61b8b3eccb0edb6cc8b1c1dd08d8795
+
+PODFILE CHECKSUM: 8b96eaccd3621ddcafcd3c4303bc8f4ab62af1c6
+
+COCOAPODS: 1.7.4

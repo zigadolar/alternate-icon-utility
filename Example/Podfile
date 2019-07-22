@@ -1,0 +1,5 @@
+use_frameworks!
+
+target 'AlternateIcons_Example' do
+  pod 'AlternateIcons', :path => '../'
+end

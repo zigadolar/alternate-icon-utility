@@ -1,0 +1,6 @@
+framework module AlternateIcons {
+  umbrella header "AlternateIcons-umbrella.h"
+
+  export *
+  module * { export * }
+}
