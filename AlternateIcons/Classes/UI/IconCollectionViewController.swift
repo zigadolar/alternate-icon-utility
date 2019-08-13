@@ -39,6 +39,10 @@ public class IconCollectionViewController: UICollectionViewController {
     override public func viewDidLoad() {
         super.viewDidLoad()
 
+        if #available(iOS 11.0, *) {
+            collectionView?.contentInsetAdjustmentBehavior = .always
+        }
+
         view.layoutIfNeeded()
     }
 
