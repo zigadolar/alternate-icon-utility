@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'AlternateIcons'
-  s.version          = '0.0.1'
+  s.version          = '0.0.2'
   s.summary          = 'An iOS utility for picking alternate app icons'
 
   s.description      = <<-DESC
