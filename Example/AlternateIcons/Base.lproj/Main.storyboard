@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14810.11" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
-    <device id="retina4_7" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14766.13"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -20,20 +22,27 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Gmn-t1-Rkx">
-                                <rect key="frame" x="145.5" y="278.5" width="84" height="110"/>
+                                <rect key="frame" x="93" y="253.5" width="189" height="160"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="h1E-Qk-Rhb">
-                                        <rect key="frame" x="12" y="0.0" width="60" height="60"/>
+                                        <rect key="frame" x="64.5" y="0.0" width="60" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="Mvx-0s-WJg"/>
                                             <constraint firstAttribute="width" constant="60" id="Rlm-Mj-gFH"/>
                                         </constraints>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="knG-El-Ssq">
-                                        <rect key="frame" x="0.0" y="80" width="84" height="30"/>
-                                        <state key="normal" title="Show Picker"/>
+                                        <rect key="frame" x="16" y="80" width="157" height="30"/>
+                                        <state key="normal" title="Show TableView Picker"/>
                                         <connections>
-                                            <action selector="showIconPicker:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="lKd-UM-ef3"/>
+                                            <action selector="showIconTableViewPicker:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Sma-Rt-jBv"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nti-PJ-CBF">
+                                        <rect key="frame" x="0.0" y="130" width="189" height="30"/>
+                                        <state key="normal" title="Show CollectionView Picker"/>
+                                        <connections>
+                                            <action selector="showIconCollectionViewPicker:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="ziX-O6-NDd"/>
                                         </connections>
                                     </button>
                                 </subviews>

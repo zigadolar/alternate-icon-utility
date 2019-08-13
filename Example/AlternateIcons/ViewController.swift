@@ -20,15 +20,28 @@ class ViewController: UIViewController {
         currentIcon.image = IconsUtility().currentIcon.iconImage
     }
 
-    @IBAction func showIconPicker(_ sender: UIButton) {
+    @IBAction func showIconTableViewPicker(_ sender: UIButton) {
         guard let iconController = IconTableViewController.load() else {
             return
         }
 
         iconController.delegate = self
-        iconController.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .stop, target: self, action: #selector(dismissController))
+        showInNavigationController(iconController)
+    }
 
-        let navigationController = UINavigationController(rootViewController: iconController)
+    @IBAction func showIconCollectionViewPicker(_ sender: UIButton) {
+        guard let iconController = IconCollectionViewController.load() else {
+            return
+        }
+
+        iconController.delegate = self
+        showInNavigationController(iconController)
+    }
+
+    func showInNavigationController(_ viewController: UIViewController) {
+        viewController.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .stop, target: self, action: #selector(dismissController))
+
+        let navigationController = UINavigationController(rootViewController: viewController)
 
         show(navigationController, sender: self)
     }
