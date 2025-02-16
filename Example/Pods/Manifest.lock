@@ -1,5 +1,5 @@
 PODS:
-  - AlternateIcons (0.0.3)
+  - AlternateIcons (0.0.4)
 
 DEPENDENCIES:
   - AlternateIcons (from `../`)
@@ -9,8 +9,8 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  AlternateIcons: c71dd08e7f893dbbdce6d6372c2cefa7906ff2a5
+  AlternateIcons: 647e4ba016bf8f3e75f4cbf4963c6abd6b65df86
 
 PODFILE CHECKSUM: 75d3925ee420edbc7379ddb0f99091900e7e68f9
 
-COCOAPODS: 1.7.5
+COCOAPODS: 1.15.2
