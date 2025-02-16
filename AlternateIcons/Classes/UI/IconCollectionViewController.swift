@@ -92,27 +92,29 @@ public class IconCollectionViewController: UICollectionViewController {
 
     override public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
-        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "IconCollectionViewCell", for: indexPath) as? IconCollectionViewCell {
-
-            let icon = iconSets[indexPath.section].icons[indexPath.row]
-
-            cell.nameLabel.text = icon.description
-            cell.iconImage.image = icon.iconImage
-
-            cell.isSelected = icon == current
-            cell.selectedBackgroundView = UIView()
-            cell.selectedBackgroundView?.backgroundColor = .white
-
-            let premiumCell = icon.premium && !hasPremium
-
-            cell.lockImage.tintColor = .white
-            cell.lockImage.isHidden = !premiumCell
-            cell.iconImage.alpha = premiumCell ? 0.5 : 1
-
-            return cell
+        guard
+            let cell = collectionView.dequeueReusableCell(
+                withReuseIdentifier: "IconCollectionViewCell",
+                for: indexPath
+            ) as? IconCollectionViewCell
+        else {
+            return UICollectionViewCell()
         }
 
-        return UICollectionViewCell()
+        let icon = iconSets[indexPath.section].icons[indexPath.row]
+
+        cell.nameLabel.text = icon.description
+        cell.iconImage.image = icon.iconImage
+
+        cell.isCurrent = icon == current
+
+        let premiumCell = icon.premium && !hasPremium
+
+        cell.lockImage.tintColor = .white
+        cell.lockImage.isHidden = !premiumCell
+        cell.iconImage.alpha = premiumCell ? 0.5 : 1
+
+        return cell
     }
 
     override public func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {

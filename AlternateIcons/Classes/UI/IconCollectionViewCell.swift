@@ -19,9 +19,17 @@ public class IconCollectionViewCell: UICollectionViewCell {
         layer.cornerRadius = 8
         layer.masksToBounds = true
 
+        selectedBackgroundView = UIView()
+
         lockImage.layer.shadowOffset = CGSize(width: 1, height: 1)
         lockImage.layer.shadowColor = UIColor.black.cgColor
         lockImage.layer.shadowOpacity = 0.1
+    }
+
+    var isCurrent: Bool = false {
+        didSet {
+            contentView.backgroundColor = self.isCurrent ? tintColor.withAlphaComponent(0.1): .clear
+        }
     }
 
     public override var isSelected: Bool {
@@ -37,9 +45,9 @@ public class IconCollectionViewCell: UICollectionViewCell {
     }
 
     private func configureSelection(_ selected: Bool) {
-        selectedBackgroundView?.isHidden = !selected
+        selectedBackgroundView?.backgroundColor = tintColor.withAlphaComponent(0.2)
 
-        layer.borderColor = tintColor.cgColor
+        layer.borderColor = tintColor.withAlphaComponent(0.5).cgColor
         layer.borderWidth = selected ? 1 : 0
     }
 }
