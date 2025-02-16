@@ -65,10 +65,10 @@ public final class IconsUtility {
         self.defaultIcon = IconsUtility.icon(with: nil, from: bundleIcons["CFBundlePrimaryIcon"] as? [String: Any]) ?? IconsUtility.fallbackDefaultIcon
         self.alternateIcons = IconsUtility.alternateIcons(from: bundleIcons["CFBundleAlternateIcons"] as? [String: Any])
     }
+}
 
-    // MARK: - Private
-
-    private static func alternateIcons(from dictionary: [String: Any]?) -> [Icon] {
+private extension IconsUtility {
+    static func alternateIcons(from dictionary: [String: Any]?) -> [Icon] {
         guard let dictionary = dictionary else { return [] }
 
         return dictionary.compactMap {
@@ -76,12 +76,13 @@ public final class IconsUtility {
         }
     }
 
-    private static func icon(with key: String?, from dictionary: [String: Any]?) -> Icon? {
-        guard let dictionary = dictionary,
+    static func icon(with key: String?, from dictionary: [String: Any]?) -> Icon? {
+        guard
+            let dictionary = dictionary,
             let iconFiles = dictionary["CFBundleIconFiles"] as? [String],
-            let iconImageName = iconFiles.last
-            else {
-                return nil
+            let iconImageName = iconFiles.first(where: { $0.contains(self.dimension) }) ?? iconFiles.last
+        else {
+            return nil
         }
 
         let icon = Icon(key: key,
@@ -92,10 +93,13 @@ public final class IconsUtility {
         return icon.iconImage != nil ? icon : nil
     }
 
-    private static var fallbackDefaultIcon: Icon {
-        let size = UIDevice.current.userInterfaceIdiom == .pad ? "76" : "60"
-        let name = "AppIcon\(size)x\(size)"
+    static var fallbackDefaultIcon: Icon {
+        let name = "AppIcon\(self.dimension)"
 
         return Icon(key: nil, imageName: name, premium: false, category: nil)
+    }
+
+    static var dimension: String {
+        UIDevice.current.userInterfaceIdiom == .pad ? "76x76" : "60x60"
     }
 }

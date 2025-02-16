@@ -19,7 +19,7 @@ public struct Icon: Equatable {
     }
 
     public var iconImage: UIImage? {
-        return UIImage(named: imageName)
+        return key.flatMap(UIImage.init(named:)) ?? UIImage(named: imageName)
     }
 
     public var description: String {
