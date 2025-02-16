@@ -103,7 +103,7 @@ public class IconCollectionViewController: UICollectionViewController {
 
         let icon = iconSets[indexPath.section].icons[indexPath.row]
 
-        cell.nameLabel.text = icon.description
+        cell.nameLabel.text = delegate?.iconViewControllerOverrideForIconName(iconName: icon.description) ?? icon.description
         cell.iconImage.image = icon.iconImage
 
         cell.isCurrent = icon == current
@@ -119,19 +119,28 @@ public class IconCollectionViewController: UICollectionViewController {
 
     override public func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
 
-        if kind == UICollectionView.elementKindSectionHeader,
-            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind,
-                                                                             withReuseIdentifier: "IconCollectionReusableHeaderView",
-                                                                             for: indexPath) as? IconCollectionReusableHeaderView {
-            headerView.title.text = iconSets[indexPath.section].name
-            headerView.title.backgroundColor = .white
-            headerView.title.layer.cornerRadius = 6
-            headerView.title.layer.masksToBounds = true
-
-            return headerView
+        guard
+            kind == UICollectionView.elementKindSectionHeader,
+            let headerView = collectionView.dequeueReusableSupplementaryView(
+                ofKind: kind,
+                withReuseIdentifier: "IconCollectionReusableHeaderView",
+                for: indexPath
+            ) as? IconCollectionReusableHeaderView
+        else {
+            return UICollectionReusableView()
         }
 
-        return UICollectionReusableView()
+        var categoryName = iconSets[indexPath.section].name
+        categoryName = delegate?.iconViewControllerOverrideForCategory(
+            category: categoryName
+        ) ?? categoryName
+
+        headerView.title.text = categoryName
+        headerView.title.backgroundColor = .white
+        headerView.title.layer.cornerRadius = 6
+        headerView.title.layer.masksToBounds = true
+
+        return headerView
     }
 
     // MARK: UICollectionViewDelegate

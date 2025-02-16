@@ -55,5 +55,13 @@ extension ViewController: IconViewControllerDelegate {
     func iconViewController(_ viewController: UIViewController, didTapPremium icon: Icon) {
         debugPrint(icon.description)
     }
+
+    func iconViewControllerOverrideForIconName(iconName: String) -> String {
+        iconName == "test_icon" ? "test_icon_override" : iconName
+    }
+
+    func iconViewControllerOverrideForCategory(category: String) -> String {
+        category == "Category" ? "CategoryOverride" : category
+    }
 }
 

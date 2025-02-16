@@ -10,6 +10,19 @@ import UIKit
 
 public protocol IconViewControllerDelegate: AnyObject {
     func iconViewController(_ viewController: UIViewController, didTapPremium icon: Icon)
+
+    func iconViewControllerOverrideForCategory(category: String) -> String
+    func iconViewControllerOverrideForIconName(iconName: String) -> String
+}
+
+public extension IconViewControllerDelegate {
+    func iconViewControllerOverrideForCategory(category: String) -> String {
+        category
+    }
+
+    func iconViewControllerOverrideForIconName(iconName: String) -> String {
+        iconName
+    }
 }
 
 public final class IconTableViewController: UITableViewController {
@@ -88,7 +101,12 @@ public final class IconTableViewController: UITableViewController {
     }
 
     override public func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-         return iconSets[section].name
+        var categoryName = iconSets[section].name
+        categoryName = delegate?.iconViewControllerOverrideForCategory(
+            category: categoryName
+        ) ?? categoryName
+
+        return categoryName
     }
 
     override public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -96,14 +114,18 @@ public final class IconTableViewController: UITableViewController {
 
             let icon = iconSets[indexPath.section].icons[indexPath.row]
 
-            cell.nameLabel.text = icon.description
+            cell.nameLabel.text = delegate?.iconViewControllerOverrideForIconName(iconName: icon.description) ?? icon.description
             cell.iconImage.image = icon.iconImage
             cell.accessoryView = nil
             cell.accessoryType = icon == current ? .checkmark : .none
 
             if icon.premium && !hasPremium {
                 let lockImage = UIImageView(image: UIImage(named: "lockIcon", in: Bundle.resourceBundle(for: type(of: self)), compatibleWith: nil))
-                lockImage.tintColor = UIColor.black.withAlphaComponent(0.15)
+                if #available(iOS 13.0, *) {
+                    lockImage.tintColor = UIColor.label.withAlphaComponent(0.15)
+                } else {
+                    lockImage.tintColor = UIColor.black.withAlphaComponent(0.15)
+                }
                 cell.accessoryView = lockImage
             }
 
